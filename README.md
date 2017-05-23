@@ -13,7 +13,7 @@ Heavily inspired by [metalsmith-feed](https://github.com/hurrymaplelad/metalsmit
 ```es6
 const Metalsmith = require('metalsmith')
 const collections = require('metalsmith-collections')
-const jsonfeed = require('metalsmith-feed')
+const jsonfeed = require('metalsmith-json-feed')
 
 Metalsmith('example')
   .use(collections({
@@ -32,7 +32,7 @@ If your site has `title`, `url` or `author` metadata, they will be used (you can
 ```es6
 const Metalsmith = require('metalsmith')
 const collections = require('metalsmith-collections')
-const jsonfeed = require('metalsmith-feed')
+const jsonfeed = require('metalsmith-json-feed')
 
 Metalsmith('example')
   .metadata({
