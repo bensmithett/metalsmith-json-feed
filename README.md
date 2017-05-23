@@ -18,11 +18,11 @@ const jsonfeed = require('metalsmith-json-feed')
 Metalsmith('example')
   .use(collections({
     posts: '*.html'
-  })
+  }))
   .use(jsonfeed({
     collection: 'posts',
     title: 'Example feed'
-  })
+  }))
 ```
 
 ### Using metadata
@@ -44,10 +44,10 @@ Metalsmith('example')
   })
   .use(collections({
     posts: '*.html'
-  })
+  }))
   .use(jsonfeed({
     collection: 'posts'
-  })
+  }))
 ```
 
 ## Options & their defaults
@@ -56,26 +56,29 @@ Metalsmith('example')
 Metalsmith('example')
   .use(collections({
     posts: '*.html'
-  })
+  }))
   .use(jsonfeed({
-    // Required.
-    // You must set this to the name of the collection you want to generate the feed from ('posts' in this example)
     collection: undefined,
+    // (Required)
+    // You must set this to the name of the collection you want to generate the feed from ('posts' in this example)
 
-    // Required if you don't supply site.title in metadata (see above).
-    // The title of your feed.
     title: undefined,
+    // (Required, unless you supply site.title in metadata - see Metadata example above)
+    // The title of your feed.
 
-    // The file name you want to generate.
     destination: 'feed.json',
+    // (Optional)
+    // The file name you want to generate.
 
-    // Limit the number of items in the feed to the last n
     limit: 20
+    // (Optional)
+    // Limit the number of items in the feed to the last n
 
-    // Any extra JSON Feed fields you want to set manually.
-    // Anything set here will override title, url or author set in site metadata.
-    // See https://jsonfeed.org/version/1 for the full list.
-    // Don't set `items` though - that's what you're using this plugin for.
     json: {}
-  })
+    // (Optional)
+    // Any extra JSON Feed fields you want to set manually.
+    // Anything set here will override title, url or author values found in metadata.
+    // See https://jsonfeed.org/version/1 for the full list.
+    // (Don't set `items` though - that's what you're using this plugin to generate)
+  }))
 ```
