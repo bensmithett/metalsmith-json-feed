@@ -1,5 +1,9 @@
 A [Metalsmith](http://www.metalsmith.io/) plugin for generating a [JSON Feed](https://jsonfeed.org/) from a [collection](https://github.com/segmentio/metalsmith-collections).
 
+```
+npm install metalsmith-json-feed
+```
+
 Heavily inspired by [metalsmith-feed](https://github.com/hurrymaplelad/metalsmith-feed).
 
 ## Usage
