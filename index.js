@@ -28,7 +28,7 @@ module.exports = (options = {}) => {
     const collection = metadata.collections[settings.collection].slice(0, settings.limit)
 
     let feed = {
-      version: "https://jsonfeed.org/version/1",
+      version: 'https://jsonfeed.org/version/1',
       title: metadata.site.title,
       items: []
     }
@@ -57,7 +57,7 @@ module.exports = (options = {}) => {
     })
 
     files[settings.destination] = {
-      contents: new Buffer(JSON.stringify(feed), 'utf8')
+      contents: Buffer.from(JSON.stringify(feed), 'utf8')
     }
 
     done()

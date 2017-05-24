@@ -1,3 +1,5 @@
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 A [Metalsmith](http://www.metalsmith.io/) plugin for generating a [JSON Feed](https://jsonfeed.org/) from a [collection](https://github.com/segmentio/metalsmith-collections).
 
 ```
