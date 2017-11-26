@@ -47,9 +47,17 @@ module.exports = (options = {}) => {
     Object.assign(feed, settings.json)
 
     collection.forEach((file) => {
+      // The item's URL either comes from its path or an explicit link.
+      let url
+      if (file.link) {
+        url = file.link
+      } else if (metadata.site && metadata.site.url) {
+        url = `${metadata.site.url}${file.path}`
+      }
+
       feed.items.push({
         id: file.path,
-        url: metadata.site && metadata.site.url ? `${metadata.site.url}${file.path}` : undefined,
+        url: url,
         title: file.title,
         content_html: file.contents.toString('utf8'),
         date_published: file.date
