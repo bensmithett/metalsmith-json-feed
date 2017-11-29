@@ -52,6 +52,17 @@ Metalsmith('example')
   }))
 ```
 
+### Item metadata
+
+Items get their `url` field from the file's path by default. To direct links elsewhere, you can override the URL by providing a `link` metadata entry for a file:
+
+```
+---
+link: http://example.com
+---
+This post is an external link.
+```
+
 ## Options & their defaults
 
 ```es6
